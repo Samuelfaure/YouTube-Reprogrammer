@@ -36,3 +36,6 @@
 
 # Ignore code coverage
 /coverage/*
+
+# Master key, ofc
+/config/credentials/production.key
