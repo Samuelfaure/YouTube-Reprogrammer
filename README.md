@@ -1,24 +1,8 @@
-# README
+# Youtube Reprogrammer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A tool to reprogram your suggestion algorithm to be more sane.
 
-Things you may want to cover:
+## Contributions
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Developers can contribute to the code
+- Everyone can suggest videos
