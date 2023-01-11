@@ -38,6 +38,9 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+# Youtube gem
+gem 'yt', '~> 0.32.0'
+
 group :development, :test do
   gem 'pry'
   gem 'pry-byebug'

@@ -291,6 +291,8 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+    yt (0.32.6)
+      activesupport
     zeitwerk (2.6.6)
 
 PLATFORMS
@@ -325,6 +327,7 @@ DEPENDENCIES
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers
+  yt (~> 0.32.0)
 
 RUBY VERSION
    ruby 3.2.0p0
