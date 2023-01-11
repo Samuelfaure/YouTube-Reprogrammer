@@ -100,9 +100,6 @@ Style/ClassAndModuleChildren:
 Style/Documentation:
   Enabled: false
 
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
 Style/GlobalVars:
   AllowedVariables:
     - $elastic
