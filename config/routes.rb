@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'login#new'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # Callback after oauth
+  get '/callback', to: 'login#create'
+
+  get '/likes', to: 'likes#new'
+  post '/likes', to: 'likes#create'
 end
