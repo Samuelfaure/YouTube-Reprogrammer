@@ -41,6 +41,8 @@ gem 'bootsnap', require: false
 # Youtube gem
 gem 'yt', '~> 0.32.0'
 
+gem "tailwindcss-rails"
+
 group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
@@ -55,6 +57,7 @@ group :development do
   gem 'rubocop', require: false
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
+
 end
 
 group :test do
