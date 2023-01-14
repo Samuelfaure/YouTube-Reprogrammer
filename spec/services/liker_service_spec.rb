@@ -7,7 +7,5 @@ RSpec.describe LikerService do
 
   let(:videos) { ['video-id'] }
 
-  it 'likes videos from the list' do
-    pending 'Not implemented yet'
-  end
+  it 'likes videos from the list'
 end

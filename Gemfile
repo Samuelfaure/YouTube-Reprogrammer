@@ -45,6 +45,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'i18n-tasks'
 end
 
 group :development do

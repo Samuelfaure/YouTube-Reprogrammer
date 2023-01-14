@@ -1,5 +1,3 @@
-
-
 Rails.application.routes.draw do
   root to: 'login#new', as: :login
 
