@@ -58,6 +58,7 @@ group :development do
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
 
+  gem "hotwire-livereload"
 end
 
 group :test do

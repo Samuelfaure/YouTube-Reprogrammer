@@ -3,6 +3,8 @@
 require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
+  config.hotwire_livereload.listen_paths << Rails.root.join("app/assets/builds")
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
