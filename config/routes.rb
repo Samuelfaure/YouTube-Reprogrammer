@@ -1,7 +1,7 @@
 
 
 Rails.application.routes.draw do
-  root 'login#new'
+  root to: 'login#new', as: :login
 
   # Callback after oauth
   get '/callback', to: 'login#create'

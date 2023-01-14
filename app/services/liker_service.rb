@@ -1,18 +1,16 @@
+# frozen_string_literal: true
+
 class LikerService
-  def initialize(user, videos = all_videos)
-    @user = user
+  def initialize(account, videos)
+    @account = account
     @videos = videos
   end
 
-  def like_videos
+  def like_all
     @videos.each { |video| like(video) }
   end
 
   private
 
   def like(video); end
-
-  def all_videos
-    YAML.load_file('config/videos.yml')
-  end
 end

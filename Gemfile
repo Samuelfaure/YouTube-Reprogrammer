@@ -59,6 +59,7 @@ end
 group :test do
   gem 'capybara'
   gem 'cuprite'
+  gem 'rack_session_access'
   gem 'rspec-collection_matchers'
   gem 'rspec-its'
   gem 'rspec-rails'
