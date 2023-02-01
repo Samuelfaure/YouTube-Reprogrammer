@@ -1,6 +1,9 @@
 require:
+  - standard
   - rubocop-rspec
   - rubocop-rails
+inherit_gem:
+  standard: config/base.yml
 
 AllCops:
   NewCops: enable

@@ -2,6 +2,6 @@
 en:
   login:
     new:
-      title: YouTube Reprogrammer
       description: Reprogram your YouTube account!
-      login: Login
+      login: Login to YouTube
+      title: YouTube Reprogrammer
