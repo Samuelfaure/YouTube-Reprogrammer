@@ -7,7 +7,7 @@ A tool to reprogram your suggestion algorithm to be more sane.
 Need ruby version as specified in .ruby-version
 
 - Execute bin/setup
-- Launch bin/dev
+- Launch: `foreman start`
 
 ## Contributions
 
