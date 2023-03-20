@@ -2,22 +2,22 @@
 
 class LikesController
   def create
-    LikerService.new(account, videos).like_all
+    LikerService.new(video_ids, authorization_code).like_all
 
     redirect_to root_path, flash: 'Success !'
   end
 
   private
 
-  def account
-    Yt::Account.new(authorization_code:, redirect_uri:)
-  end
-
   def authorization_code
     session[:user_code]
   end
 
-  def videos
+  def video_ids
+    video_list_file['videos'].pluck('id')
+  end
+
+  def video_list_file
     YAML.load_file('config/videos.yml')
   end
 end

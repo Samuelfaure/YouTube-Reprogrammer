@@ -3,9 +3,24 @@
 require 'rails_helper'
 
 RSpec.describe LikerService do
-  subject { described_class.new(user, videos) }
+  subject(:call) { described_class.new(video_ids, authorization_code).like_all }
 
-  let(:videos) { ['video-id'] }
+  let(:id) { 'video-id' }
+  let(:video_ids) { [id] }
+  let(:authorization_code) { 'auth-code' }
 
-  it 'likes videos from the list'
+  let(:rating) { instance_double(Yt::Rating) }
+  let(:video) { instance_double(Yt::Video) }
+  let(:auth) { instance_double(Yt::Account).as_null_object }
+
+  before do
+    allow(Yt::Account).to receive(:new).with({ authorization_code: }).and_return(auth)
+    allow(Yt::Video).to receive(:new).with({ id:, auth: }).and_return(video)
+  end
+
+  it 'likes videos from the list' do
+    expect(video).to receive(:like)
+
+    call
+  end
 end
