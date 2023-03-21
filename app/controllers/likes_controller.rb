@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
-class LikesController
+class LikesController < ApplicationController
+  def new
+    @videos = video_list_file['videos']
+  end
+
   def create
     LikerService.new(video_ids, authorization_code).like_all
 

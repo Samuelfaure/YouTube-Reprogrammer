@@ -1,5 +1,8 @@
 ---
 en:
+  likes:
+    new:
+      like_all: Like all videos
   login:
     new:
       description: Reprogram your YouTube account!
