@@ -7,7 +7,7 @@ RSpec.describe LoginController, type: :request do
     it 'sets the session' do
       get '/callback', params: { code: 'code' }
 
-      expect(session[:user_code]).to eq('code')
+      expect(session[:authorization_code]).to eq('code')
     end
   end
 end
