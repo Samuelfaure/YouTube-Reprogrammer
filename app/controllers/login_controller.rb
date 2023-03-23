@@ -6,8 +6,7 @@ class LoginController < ApplicationController
   end
 
   def create
-    session[:user_code] = params[:code]
-
+    session[:authorization_code] = params[:code]
     redirect_to likes_path
   end
 

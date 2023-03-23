@@ -13,6 +13,12 @@
   </head>
 
   <body class="w-full"></body>
+    <% if flash[:success] %>
+      <div class="bg-green-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
+        <%= flash[:success] %>
+      </div>
+    <% end %>
+
     <main class="w-full">
       <%= yield %>
     </main>

@@ -6,15 +6,15 @@ class LikesController < ApplicationController
   end
 
   def create
-    LikerService.new(video_ids, authorization_code).like_all
+    LikerService.new(video_ids, auth).like_all
 
-    redirect_to root_path, flash: 'Success !'
+    redirect_to likes_path, flash: { success: 'All videos successfully liked!' }
   end
 
   private
 
-  def authorization_code
-    session[:user_code]
+  def auth
+    @auth ||= Yt::Account.new(authorization_code: session[:authorization_code], redirect_uri:)
   end
 
   def video_ids
@@ -23,5 +23,9 @@ class LikesController < ApplicationController
 
   def video_list_file
     YAML.load_file('config/videos.yml')
+  end
+
+  def redirect_uri
+    "#{request.base_url}/callback"
   end
 end
