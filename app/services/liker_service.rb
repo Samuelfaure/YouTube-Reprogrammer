@@ -1,20 +1,22 @@
 # frozen_string_literal: true
 
 class LikerService
-  attr_reader :video_ids, :auth
+  attr_reader :video_list, :auth
 
-  def initialize(video_ids, auth)
-    @video_ids = video_ids
+  def initialize(video_list, auth)
+    @video_list = video_list
     @auth = auth
   end
 
-  def like_all
-    videos.each(&:like)
-  end
+  def like_all_and_return_failed
+    failed_videos = []
 
-  private
+    video_list.each do |video|
+      Yt::Video.new(id: video['id'], auth:).like
+    rescue StandardError
+      failed_videos << video['name']
+    end
 
-  def videos
-    video_ids.map { |id| Yt::Video.new id:, auth: }
+    failed_videos
   end
 end
