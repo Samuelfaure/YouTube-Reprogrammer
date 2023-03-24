@@ -16,7 +16,7 @@ class LikesController < ApplicationController
     flash_msgs = { success: 'Videos successfully liked!' }
     add_failed_videos_warning(flash_msgs, failed_videos) if failed_videos.any?
 
-    redirect_to likes_path, flash: flash_msgs
+    redirect_to login_path, flash: flash_msgs
   end
 
   def destroy
@@ -25,7 +25,7 @@ class LikesController < ApplicationController
     flash_msgs = { success: 'Videos successfully unliked!' }
     add_failed_videos_warning(flash_msgs, failed_videos) if failed_videos.any?
 
-    redirect_to likes_path, flash: flash_msgs
+    redirect_to login_path, flash: flash_msgs
   end
 
   private
