@@ -2,7 +2,12 @@
 
 class LikesController < ApplicationController
   def new
-    @videos = video_list
+    @videos = video_list.map do |video|
+      {
+        link: "https://www.youtube.com/watch?v=#{video['id']}",
+        title: video['name']
+      }
+    end
   end
 
   def create
@@ -14,10 +19,19 @@ class LikesController < ApplicationController
     redirect_to likes_path, flash: flash_msgs
   end
 
+  def destroy
+    failed_videos = LikerService.new(video_list, auth).unlike_all_and_return_failed
+
+    flash_msgs = { success: 'Videos successfully unliked!' }
+    add_failed_videos_warning(flash_msgs, failed_videos) if failed_videos.any?
+
+    redirect_to likes_path, flash: flash_msgs
+  end
+
   private
 
   def auth
-    @auth ||= YoutubeAuthService.new(session[:access_token], request.base_url).auth
+    @auth ||= YoutubeAuthService.new(session[:authorization_code], request.base_url).auth
   end
 
   def video_list
@@ -25,6 +39,6 @@ class LikesController < ApplicationController
   end
 
   def add_failed_videos_warning(flash_msgs, failed_videos)
-    flash_msgs.merge!(warning: "Failed to like videos: #{failed_videos.join(', ')}")
+    flash_msgs.merge!(warning: "Operation failed on videos: #{failed_videos.join(', ')} (Already liked/unliked?)")
   end
 end

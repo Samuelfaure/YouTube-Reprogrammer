@@ -10,6 +10,12 @@ class LoginController < ApplicationController
     redirect_to likes_path
   end
 
+  def destroy
+    session[:authorization_code] = nil
+
+    redirect_to login_path
+  end
+
   private
 
   def scopes

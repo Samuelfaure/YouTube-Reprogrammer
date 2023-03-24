@@ -2,7 +2,8 @@
 en:
   likes:
     new:
-      like_all: Like all videos
+      like_all: Like all videos on this list
+      unlike_all: Cancel (Unlike all)
   login:
     new:
       description: Reprogram your YouTube account!
